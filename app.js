@@ -9,7 +9,8 @@ const notFound = require('./middlewares/notFound.js');
 // static assets middleware
 app.use(express.static('public'));
 
-
+// body parsing middleware
+app.use(express.json());
 
 
 // homepage
