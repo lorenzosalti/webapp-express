@@ -10,5 +10,5 @@ const port = 3000;
 
 // server listen
 app.listen(port, () => {
-  console.log('Server in ascolto alla porta ' + port);
+  console.log('Webapp server listening at port ' + port);
 });
