@@ -5,7 +5,10 @@ const port = 3000;
 
 
 
-
+// homepage
+app.get('/', (req, res) => {
+  res.send('Webapp homepage');
+});
 
 
 // server listen
