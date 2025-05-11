@@ -1,4 +1,4 @@
-
+const connection = require('../data/db');
 
 // index
 function index(req, res) {
