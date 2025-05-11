@@ -6,6 +6,11 @@ const port = 3000;
 const genericError = require('./middlewares/genericError.js');
 const notFound = require('./middlewares/notFound.js');
 
+// static assets middleware
+app.use(express.static('public'));
+
+
+
 
 // homepage
 app.get('/', (req, res) => {
@@ -14,8 +19,9 @@ app.get('/', (req, res) => {
 
 
 
-// middleware for handling errors
+// use 500
 app.use(genericError);
+// use 404
 app.use(notFound);
 
 
