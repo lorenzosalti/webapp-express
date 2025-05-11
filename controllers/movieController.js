@@ -14,7 +14,7 @@ function index(req, res) {
     res.json(results.map(movie => (
       {
         ...movie,
-        image: 'http://127.0.0.1:3000/' + movie.image
+        image: process.env.PUBLIC_PATH + movie.image
       }
     )));
 
@@ -53,7 +53,7 @@ function show(req, res) {
       // create reviews key in movie
       movie.reviews = results;
 
-      movie.image = 'http://127.0.0.1:3000/' + movie.image
+      movie.image = process.env.PUBLIC_PATH + movie.image
 
       res.json(movie);
 
