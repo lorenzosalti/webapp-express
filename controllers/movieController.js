@@ -4,7 +4,12 @@ const connection = require('../data/db');
 function index(req, res) {
 
   // sql query
-  const sql = 'SELECT * FROM movies';
+  const sql = `
+    SELECT movies.*, AVG(reviews.vote) AS average_vote
+    FROM movies
+    LEFT JOIN reviews
+    ON movies.id = reviews.movie_id
+    GROUP BY movies.id`;
 
   // connection to db
   connection.query(sql, (err, results) => {
