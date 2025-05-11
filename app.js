@@ -2,9 +2,13 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// routers import
+const moviesRouter = require('./routers/movies.js');
+
 // middlewares import
 const genericError = require('./middlewares/genericError.js');
 const notFound = require('./middlewares/notFound.js');
+
 
 // static assets middleware
 app.use(express.static('public'));
@@ -17,6 +21,9 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Webapp homepage');
 });
+
+// movies router
+app.use('/movies', moviesRouter);
 
 
 
