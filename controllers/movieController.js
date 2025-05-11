@@ -11,7 +11,12 @@ function index(req, res) {
 
     if (err) return res.status(500).json({ error: 'Database query failed' });
 
-    res.json(results);
+    res.json(results.map(movie => (
+      {
+        ...movie,
+        image: 'http://127.0.0.1:3000/' + movie.image
+      }
+    )));
 
   });
 
@@ -47,6 +52,8 @@ function show(req, res) {
 
       // create reviews key in movie
       movie.reviews = results;
+
+      movie.image = 'http://127.0.0.1:3000/' + movie.image
 
       res.json(movie);
 
