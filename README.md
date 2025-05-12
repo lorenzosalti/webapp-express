@@ -4,7 +4,7 @@
 
 ### Project description
 
-This full-stack project is going to be diveded i two repositories: Frontend and Backend (*webapp-express*).
+This full-stack project is going to be diveded i two repositories: Frontend (*webapp-react*) and Backend (*webapp-express*).
 Each day of work has different goals, mimicking what an actual web developer job consists of.
 
 ---
