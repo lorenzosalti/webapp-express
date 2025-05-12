@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT;
+const cors = require('cors');
 
 // routers import
 const moviesRouter = require('./routers/movies.js');
@@ -8,6 +9,13 @@ const moviesRouter = require('./routers/movies.js');
 // middlewares import
 const genericError = require('./middlewares/genericError.js');
 const notFound = require('./middlewares/notFound.js');
+
+
+console.log(process.env)
+// cors
+app.use(cors({
+  origin: process.env.FE_APP
+}));
 
 
 // static assets middleware
