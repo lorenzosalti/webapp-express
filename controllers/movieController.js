@@ -7,7 +7,7 @@ function index(req, res) {
 
   // sql query
   let sql = `
-    SELECT movies.*, AVG(reviews.vote) AS average_vote
+    SELECT movies.*, ROUND(AVG(reviews.vote), 2) AS average_vote
     FROM movies
     LEFT JOIN reviews
     ON movies.id = reviews.movie_id`
