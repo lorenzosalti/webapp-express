@@ -11,7 +11,6 @@ const genericError = require('./middlewares/genericError.js');
 const notFound = require('./middlewares/notFound.js');
 
 
-console.log(process.env)
 // cors
 app.use(cors({
   origin: process.env.FE_APP
